@@ -37,4 +37,31 @@
  */
 export function rangoli(n) {
   // Your code here
+ if (!Number.isInteger(n) || n <= 0) {
+    return [];
+  }
+
+  const result = [];
+
+  for (let i = 1; i <= 2 * n - 1; i++) {
+
+    let stars = i <= n ? i : 2 * n - i;
+    let spaces = n - stars;
+
+    let row = "";
+
+
+    for (let s = 0; s < spaces; s++) {
+      row += " ";
+    }
+
+ 
+    for (let st = 0; st < stars; st++) {
+      row += st === stars - 1 ? "*" : "* ";
+    }
+
+    result.push(row);
+  }
+
+  return result;
 }
